@@ -1,42 +1,25 @@
-# JavaScript Full Stack Project
-* http://nodejs.org 접속하여 nodejs 설치하기
+# TodoList Project
 
-## Nodejs 보조 도구들을 설치하기
-* 윈도우 cmd를 `관리자 권한`으로 실행하기
-
-### nodemon : 소스코드 변경 시 자동 재실행 도구
-* 표준(vanilla JS)를 테스트하기 위한 도구 
 ```
-npm install -g nodemon
-```
-### npm : nodejs project manager, dependency 설정
-```
-npm inastall -g npm@8.13.1
+|----------TodoMain----------|
+|                            |
+|   |------TodoInput-----|   |
+|   |--------------------|   |
+|                            |
+|   |------TodoList------|   |
+|   |--------------------|   |
+|                            |
+|----------------------------|
 ```
 
-## react 프로젝트 보조 도구들을 설치하기
+## 데이터 흐름 정의
 
-### create-react-app : react 프로젝트 초기 작성 template
-```
-npm install -g create-react-app
-```
+- TodoInput에서 데이터를 입력하고 추가하면 TodoList 배열에 추가하고
+- TodoList 배열은 TodoList에서 표출한다
+- TodoInput과 TodoList가 Parents-child 관계에 있다면 TodoInput에서 TodoList State에 값을 추가하면 자연히 TodoList에 변경된 값이 표출될 것이다 하지만 2개의 Component가 같은 level에 있기 때문에 TodoInput에서 TodoList State를 정의하면 데이터를 공유하는데 어려움이 있다
+- 이러한 경우는 TodoMain에서 TodoList State를 선언하고 TodoInput과 TodoList가 공유할 수 있는 방법으로 진행해야 한다
 
-### yarn : npm과 같은 일을 하는 프로젝트 관리자
-* react 프로젝트에서는 npm보다 yarn을 더 많이 사용한다. 의존성 관리가 더 잘되기 때문
-```
-npm install -g yarn
-```
+## TodoList State의 추가
 
-## React project 만들기
-* vsCode 터미널을 open하여 명령으로 실행하기
-* /workspace/React_2022/`create-react-app 프로젝트명`
-* ex) `create-react-app hello`
-* react 프로젝트 이름은 영문소문자, 숫자, 마이너스(-) 문자를 조합하여 작성한다
-
-## 프로젝트 폴더에서 터미널 열기 실행하여 작업 준비
-* Dependency를 한번 더 새롭게 업데이트 하기
-* `yarn` 또는 `npm install`
-
-## vsCode에서 터미널 열기
-* 메뉴에서 터미널 / 새 터미널 열기를 선택하면 project root(workspace)에서 터미널 열기 : 새로운 프로젝트를 생성하기 위한 터미널 열기
-* 프로젝트 생성 후 프로젝트 폴더에서 마우스 우클릭하여 통합 터미널 열기 : 프로젝트를 시작하거나 Dependency를 설치하기 위한 터미널 열기
+- TodoMain에서 TodoList State를 선언하고, 데이터를 입력하는 함수를 선언하여 데이터를 입력하는 함수를 TodoInput에 props로 전달해주어야 한다
+- TodoInput은 input box에 입력된 데이터를 TodoMain으로부터 전달받은 함수를 통해 Todomain에 선언된 TodoList State에 추가하는 과정이 필요하다
