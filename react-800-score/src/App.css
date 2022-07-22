@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+.logo1 {
+  height: 5vmin;
+  pointer-events: none;
+}
+
+.logo2 {
+  height: 10vmin;
+  pointer-events: none;
+}
+.logo3 {
+  height: 15vmin;
+  pointer-events: none;
+}
+.logo4 {
+  height: 20vmin;
+  pointer-events: none;
+}
+.logo5 {
+  height: 25vmin;
+  pointer-events: none;
+}
+.logo6 {
+  height: 30vmin;
+  pointer-events: none;
+}
+.logo7 {
+  height: 35vmin;
+  pointer-events: none;
+}
+.logo8 {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    animation-name: bounce;
+
+    animation-duration: 0.5s;
+
+    animation-timing-function: ease;
+
+    transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo2 {
+    animation: App-logo-spin infinite 20s linear;
+    animation-name: bounce;
+    animation-delay: 0.3s;
+    animation-duration: 0.5s;
+
+    animation-timing-function: ease;
+
+    transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+  }
+}
+
+.App-header {
+  background-color: #c92121;
+  min-height: 30vh;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0%) scaleY(0.6);
+  }
+  60% {
+    transform: translateY(-100%) scaleY(1.1);
+  }
+  70% {
+    transform: translateY(0%) scaleY(0.95) scaleX(1.05);
+  }
+  80% {
+    transform: translateY(0%) scaleY(1.05) scaleX(1);
+  }
+  90% {
+    transform: translateY(0%) scaleY(0.95) scaleX(1);
+  }
+  100% {
+    transform: translateY(0%) scaleY(1) scaleX(1);
+  }
+}
+
+table {
+  width: 80%;
+  margin: 10px auto;
+}
+
+table tr {
+  cursor: pointer;
+}
+
+table tr td:last-of-type {
+  color: red;
+  font-weight: 500;
+  text-align: center;
+  /* border: 1px solid black; */
+}
